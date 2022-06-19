@@ -9,7 +9,7 @@ public class ByteExam1 {
 
 	public static void main(String[] args) {
 		//inputStream 읽기, outputStream 쓰기
-		
+		long startTime = System.currentTimeMillis();	
 		FileInputStream fis = null; 
 		FileOutputStream fos = null;
 		
@@ -41,7 +41,9 @@ public class ByteExam1 {
 			}
 			
 		}
-
+		
+		long endTime = System.currentTimeMillis();
+		System.out.println(endTime - startTime);//18
 	}
 
 }
