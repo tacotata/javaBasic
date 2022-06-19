@@ -10,9 +10,9 @@ public class ByteExam3 {
 		try(
 				DataOutputStream out = new DataOutputStream(new FileOutputStream("data.txt"));
 				){
-			out.writeInt(100);
-			out.writeBoolean(true);
-			out.writeDouble(50.5);
+			out.writeInt(100);//4byte
+			out.writeBoolean(true);//1byte
+			out.writeDouble(50.5);//8byte
 		}catch (Exception e) {
 			e.printStackTrace();
 		}
