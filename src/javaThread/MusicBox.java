@@ -2,7 +2,7 @@ package javaThread;
 
 public class MusicBox {
 	
-	public void playMusicA() {
+	public synchronized void playMusicA() {
 		for(int i =0; i<10; i++) {
 			System.out.println("신나는 음악!!!");
 			try {
@@ -14,7 +14,7 @@ public class MusicBox {
 		}
 	}
 	
-	public void playMusicB() {
+	public synchronized void playMusicB() {
 		for(int i =0; i<10; i++) {
 			System.out.println("슬픈 음악!!!");
 			try {
@@ -28,7 +28,9 @@ public class MusicBox {
 	
 	public void playMusicC() {
 		for(int i =0; i<10; i++) {
-			System.out.println("카페 음악!!!");
+			synchronized (this) {
+				System.out.println("카페 음악!!!");
+			}
 			try {
 				Thread.sleep((int)(Math.random()*1000));
 			} catch (InterruptedException e) {
